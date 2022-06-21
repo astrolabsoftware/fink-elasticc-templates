@@ -51,7 +51,7 @@ if __name__ == "__main__":
     --> {}
     Number of incoming alerts: {:,}
     Number of alerts enriched: {:,}
-    Statistics (slope for g-band):
+    Statistics (slope for g-band in units of flux per day):
     """.format(datapath, len(pdf), len(nonzeros))
     print(msg)
     print(nonzeros.describe())

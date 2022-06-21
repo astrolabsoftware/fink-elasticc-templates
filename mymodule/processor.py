@@ -58,4 +58,5 @@ def compute_g_slope(
     slopes[mask] = pd.DataFrame([midpointtais[mask], psfluxes[mask]])\
         .apply(lambda x: return_fitted_slope(linear_model, *x))
 
+    # return information for ALL incoming alerts
     return slopes
