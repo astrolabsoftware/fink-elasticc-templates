@@ -7,9 +7,9 @@ This repo hosts necessary files to create and test a science module using Elasti
 
 ## Elasticc alert data
 
-Elasticc alert data is different from the data used by the training. First, the schema is different (renamed fields, less available fields). You can inspect some of the difference [here](https://portal.nersc.gov/cfs/lsst/DESC_TD_PUBLIC/ELASTICC/TRAINING_SAMPLES/A_FORMAT.TXT).
+Elasticc alert data is different from the data used by the training. First, the schema is different (renamed fields, less available fields). You can inspect some of the difference [here](https://portal.nersc.gov/cfs/lsst/DESC_TD_PUBLIC/ELASTICC/TRAINING_SAMPLES/A_FORMAT.TXT). Second, the format is different (training = full lightcurves format, alert = chunked lightcurves).
 
-For the sake of this exercise, we exported data in the form required by the broker. We internally use parquet. Each file contains a table, whose rows are individual alerts, and columns are alert fields. You will find two exports in the folder `data`.
+For the sake of this exercise, we exported data in the form required by the broker. We internally use Apache Parquet (we receive Apache Avro, and convert straight). Each file contains a table, whose rows are individual alerts, and columns are alert fields. You will find two exports in the folder `data`.
 
 ### `data/elasticc_test0.parquet`
 
