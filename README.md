@@ -11,11 +11,11 @@ Elasticc alert data is different from the data used by the training. First, the 
 
 For the sake of this exercise, we exported data in the form required by the broker. We internally use parquet. Each file contains a table, whose rows are individual alerts, and columns are alert fields. You will find two exports in the folder `data`.
 
-### data/elasticc_test0.parquet
+### `data/elasticc_test0.parquet`
 
 This is a basic export of the test data given by DESC before the challenge (https://github.com/LSSTDESC/plasticc_alerts/tree/main/tests/test01). It contains 5,693 alerts. The alerts have usually long history.
 
-### data/elasticc_test1.parquet
+### `data/elasticc_test1.parquet`
 
 Export of the first 27,993 alerts from the challenge.
 
