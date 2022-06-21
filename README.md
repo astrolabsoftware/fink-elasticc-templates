@@ -40,7 +40,7 @@ This example has been tested on Python 3.7 & 3.9. Higher versions might work. Ot
 - scipy>=1.7.3
 - pandas==1.3.5
 
-In case you do not want to mess up your environment, you can pull one of the Fink docker images (dev or prod) at https://hub.docker.com/r/julienpeloton/fink-ci/tags, and clone the repo inside.
+In case you do not want to mess up your environment (and work in the environment of the broker), you can pull one of the Fink docker images (dev or prod) at https://hub.docker.com/r/julienpeloton/fink-ci/tags, and clone the repo inside.
 
 ### Test files
 
