@@ -43,6 +43,20 @@ Note the example has not been optimised! The goal is to learn how to construct a
 
 Although in practice the logic is always the same as described in this example, some examples can be more complicated than others. You can have a look at what is currently done in Fink with ZTF data on production: https://github.com/astrolabsoftware/fink-science.
 
+### FAQ
+
+#### Can the science module output more than one new field?
+
+Yes, but the syntax becomes slightly different between Pandas and Spark. If you need, do it as usual in Pandas, and we will translate in Spark later on.
+
+#### Why are there `null` fields?
+
+Elasticc is the first of its kind, and simulations are still limited. Some of the fields have not been simulated.
+
+#### Why the schemas between elasticc_test0.parquet and elasticc_test1.parquet are slightly different?
+
+The Elasticc schema is still evolving as we provide feedback. From time to time, you will see a schema migration.
+
 ## Difference with a full broker version
 
 The broker is using Apache Spark to distribute the load on several machines, and process chunks of alerts in parallel. The syntax is very similar to the one described here. One of the main difference is that machines do not have access to a shared local storage, hence any IO to be read/written (configuration files if need be, trained models, ...) must be minimised or distributed beforehand.
