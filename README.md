@@ -23,13 +23,26 @@ Export of the first 27,993 alerts from the challenge.
 
 TBD
 
-## Processing alert data
+## Fink science module
 
 For the sake of simplicity, we will abstract all the technical details of Fink (e.g. no use of Apache Spark), and keep only what is needed to add values to alerts. A science module in Fink is simply a Python routine that takes as input a set of alert fields, and output a new field based on the user logic.
 
 In practice, the science module operates on batches of alerts, materialised as Pandas Series for each alert field. We provide a basic [example](mymodule) to familiarise with the structure of the science module. It contains two parts:
 1. `processor.py`: entry point for the broker.
 2. `utils.py`: anything else required by the science module.
+
+## Running
+
+### Requirements
+
+This example has been tested on Python 3.7 & 3.9. Higher versions might work. Other dependencies:
+- numpy>=1.19.5
+- scipy>=1.7.3
+- pandas==1.3.5
+
+In case you do not want to mess up your environment, you can pull one of the Fink docker images (dev or prod) at https://hub.docker.com/r/julienpeloton/fink-ci/tags, and clone the repo inside.
+
+### Test files
 
 This example takes alerts, constructs lightcurves (concatenating the current measurement with the alert history), and for those with at least 2 measurements in the g band, extract the slope in the g band. To test it, just run:
 
